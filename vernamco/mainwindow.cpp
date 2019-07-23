@@ -15,9 +15,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_Caesar_triggered()
+void MainWindow::on_CaesarEncryption_triggered()
 {
-    CaesarDialog caesarDialog(this);
+    CaesarDialog caesarDialog(this, Ui::EncryptionMode::Encrypt);
+    caesarDialog.setModal(true);
+    caesarDialog.exec();
+}
+
+void MainWindow::on_CaesarDecryption_triggered()
+{
+    CaesarDialog caesarDialog(this, Ui::EncryptionMode::Decrypt);
     caesarDialog.setModal(true);
     caesarDialog.exec();
 }

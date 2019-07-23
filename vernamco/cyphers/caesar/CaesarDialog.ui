@@ -57,7 +57,7 @@
     <widget class="QLineEdit" name="AlphabetLineEdit"/>
    </item>
    <item row="9" column="0">
-    <widget class="QPushButton" name="EncryptPushButton">
+    <widget class="QPushButton" name="EncryptionPushButton">
      <property name="text">
       <string>Encrypt</string>
      </property>
@@ -68,7 +68,7 @@
  <tabstops>
   <tabstop>AlphabetLineEdit</tabstop>
   <tabstop>ShiftSpinBox</tabstop>
-  <tabstop>EncryptPushButton</tabstop>
+  <tabstop>EncryptionPushButton</tabstop>
  </tabstops>
  <resources/>
  <connections/>

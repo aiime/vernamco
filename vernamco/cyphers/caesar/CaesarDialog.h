@@ -5,23 +5,26 @@
 #include "../../MainWindow.h"
 
 namespace Ui {
-class CaesarDialog;
-}
+    enum EncryptionMode { Encrypt, Decrypt };
 
-class CaesarDialog : public QDialog
-{
-    Q_OBJECT
+    class CaesarDialog;
+    }
 
-public:
-    explicit CaesarDialog(QWidget *parent = nullptr);
-    ~CaesarDialog();
+    class CaesarDialog : public QDialog
+    {
+        Q_OBJECT
 
-private slots:
-    void on_EncryptPushButton_clicked();
+    public:
+        explicit CaesarDialog(QWidget *parent, Ui::EncryptionMode encryptionMode);
+        ~CaesarDialog();
 
-private:
-    Ui::CaesarDialog *ui;
-    MainWindow *mainWindow;
+    private slots:
+        void on_EncryptionPushButton_clicked();
+
+    private:
+        Ui::CaesarDialog *ui;
+        MainWindow *mainWindow;
+        Ui::EncryptionMode encryptionMode;
 };
 
 #endif // CAESARDIALOG_H

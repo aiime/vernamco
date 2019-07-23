@@ -5,12 +5,22 @@
 #include "../Cyphers.h"
 #include "ui_MainWindow.h"
 
-CaesarDialog::CaesarDialog(QWidget *parent) :
+CaesarDialog::CaesarDialog(QWidget *parent, Ui::EncryptionMode encryptionMode) :
     QDialog(parent),
     ui(new Ui::CaesarDialog),
-    mainWindow(static_cast<MainWindow*>(parent))
+    mainWindow(static_cast<MainWindow*>(parent)),
+    encryptionMode(encryptionMode)
 {
     ui->setupUi(this);
+
+    if (encryptionMode == Ui::EncryptionMode::Encrypt)
+    {
+        ui->EncryptionPushButton->setText("Encrypt");
+    }
+    else
+    {
+        ui->EncryptionPushButton->setText("Decrypt");
+    }
 }
 
 CaesarDialog::~CaesarDialog()
@@ -18,11 +28,11 @@ CaesarDialog::~CaesarDialog()
     delete ui;
 }
 
-void CaesarDialog::on_EncryptPushButton_clicked()
+void CaesarDialog::on_EncryptionPushButton_clicked()
 {
     QString text     = mainWindow->ui->TextEdit->toPlainText();
     QString alphabet = ui->AlphabetLineEdit->text();
-    int shift        = ui->ShiftSpinBox->value();
+    int     shift    = ui->ShiftSpinBox->value();
 
     if (text == "")
     {
@@ -42,8 +52,16 @@ void CaesarDialog::on_EncryptPushButton_clicked()
         return;
     }
 
+    if (encryptionMode == Ui::EncryptionMode::Encrypt)
+    {
+        QString encryptedText = Cyphers::Caesar(text, alphabet, shift);
+        mainWindow->ui->TextEdit->setText(encryptedText);
+    }
+    else
+    {
+        QString decryptedText = Cyphers::Caesar(text, alphabet, -shift);
+        mainWindow->ui->TextEdit->setText(decryptedText);
+    }
 
-    QString encryptedText = Cyphers::Caesar(text, alphabet, shift);
-    mainWindow->ui->TextEdit->setText(encryptedText);
     accept();
 }

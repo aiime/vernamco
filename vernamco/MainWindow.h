@@ -17,7 +17,8 @@ public:
     Ui::MainWindow *ui;
 
 private slots:
-    void on_Caesar_triggered();
+    void on_CaesarEncryption_triggered();
+    void on_CaesarDecryption_triggered();
 };
 
 #endif
