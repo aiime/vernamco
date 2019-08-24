@@ -1,7 +1,8 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
-#include "cyphers/Cyphers.h"
-#include "cyphers/caesar/CaesarDialog.h"
+#include "MaskEncryptionDialog.h"
+#include "MaskDecryptionDialog.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,16 +16,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_CaesarEncryption_triggered()
+void MainWindow::on_MaskEncryption_triggered()
 {
-    CaesarDialog caesarDialog(this, Ui::EncryptionMode::Encrypt);
-    caesarDialog.setModal(true);
-    caesarDialog.exec();
+    MaskEncryptionDialog maskEncryptionDialog(this);
+    maskEncryptionDialog.setModal(true);
+    maskEncryptionDialog.exec();
 }
 
-void MainWindow::on_CaesarDecryption_triggered()
+void MainWindow::on_MaskDecryption_triggered()
 {
-    CaesarDialog caesarDialog(this, Ui::EncryptionMode::Decrypt);
-    caesarDialog.setModal(true);
-    caesarDialog.exec();
+    MaskDecryptionDialog maskDecryptionDialog(this);
+    maskDecryptionDialog.setModal(true);
+    maskDecryptionDialog.exec();
 }

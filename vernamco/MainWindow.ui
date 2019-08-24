@@ -84,13 +84,13 @@
     <property name="title">
      <string>Encryption</string>
     </property>
-    <addaction name="CaesarEncryption"/>
+    <addaction name="MaskEncryption"/>
    </widget>
    <widget class="QMenu" name="DecryptionMenu">
     <property name="title">
      <string>Decryption</string>
     </property>
-    <addaction name="CaesarDecryption"/>
+    <addaction name="MaskDecryption"/>
    </widget>
    <addaction name="FileMenu"/>
    <addaction name="EncryptionMenu"/>
@@ -111,14 +111,14 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="CaesarEncryption">
+  <action name="MaskEncryption">
    <property name="text">
-    <string>Caesar</string>
+    <string>Mask</string>
    </property>
   </action>
-  <action name="CaesarDecryption">
+  <action name="MaskDecryption">
    <property name="text">
-    <string>Caesar</string>
+    <string>Mask</string>
    </property>
   </action>
  </widget>

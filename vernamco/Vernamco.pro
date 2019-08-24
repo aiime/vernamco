@@ -26,19 +26,23 @@ CONFIG += c++11
 
 SOURCES += \
         MainWindow.cpp \
-        cyphers/caesar/Caesar.cpp \
-        cyphers/caesar/CaesarDialog.cpp \
+        MaskDecryption.cpp \
+        MaskDecryptionDialog.cpp \
+        MaskEncryption.cpp \
+        MaskEncryptionDialog.cpp \
         main.cpp
 
 HEADERS += \
         MainWindow.h \
-        cyphers.h \
-        cyphers/Cyphers.h \
-        cyphers/caesar/CaesarDialog.h
+        MaskDecryption.h \
+        MaskDecryptionDialog.h \
+        MaskEncryption.h \
+        MaskEncryptionDialog.h \
 
 FORMS += \
         MainWindow.ui \
-        cyphers/caesar/CaesarDialog.ui
+        MaskDecryptionDialog.ui \
+        MaskEncryptionDialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
