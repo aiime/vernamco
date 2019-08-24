@@ -14,24 +14,10 @@
    <string>Mask Encryption Properties</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="AlphabetLineEdit">
+   <item row="8" column="1">
+    <widget class="QLineEdit" name="MaskLineEdit">
      <property name="placeholderText">
-      <string>abc...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="AlphabetLabel">
-     <property name="text">
-      <string>Alphabet:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0">
-    <widget class="QLabel" name="MaskLabel">
-     <property name="text">
-      <string>Mask</string>
+      <string>000-000-000...</string>
      </property>
     </widget>
    </item>
@@ -42,10 +28,38 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="1">
-    <widget class="QLineEdit" name="MaskLineEdit">
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="AlphabetLineEdit">
      <property name="placeholderText">
-      <string>000-000-000...</string>
+      <string>abc...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="MaskLabel">
+     <property name="text">
+      <string>Mask</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="AlphabetLabel">
+     <property name="text">
+      <string>Alphabet:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="AlphabetFromIniPushButton">
+     <property name="text">
+      <string>From .ini</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QPushButton" name="MaskFromIniPushButton">
+     <property name="text">
+      <string>From .ini</string>
      </property>
     </widget>
    </item>

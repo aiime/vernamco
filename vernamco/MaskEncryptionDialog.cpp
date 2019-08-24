@@ -1,4 +1,5 @@
 #include <QMessageBox>
+#include <QSettings>
 
 #include "MaskEncryption.h"
 #include "MaskEncryptionDialog.h"
@@ -63,4 +64,18 @@ QVector<int> MaskEncryptionDialog::strVectorToIntVector(QVector<QString> strVect
        intVector.append(strVector[i].toInt());
     }
     return intVector;
+}
+
+void MaskEncryptionDialog::on_AlphabetFromIniPushButton_clicked()
+{
+    QSettings setting(QCoreApplication::applicationDirPath() + "/vernamco.ini", QSettings::IniFormat);
+    QString alphabet = setting.value("alphabet", "").toString();
+    ui->AlphabetLineEdit->setText(alphabet);
+}
+
+void MaskEncryptionDialog::on_MaskFromIniPushButton_clicked()
+{
+    QSettings setting(QCoreApplication::applicationDirPath() + "/vernamco.ini", QSettings::IniFormat);
+    QString mask = setting.value("mask", "").toString();
+    ui->MaskLineEdit->setText(mask);
 }
