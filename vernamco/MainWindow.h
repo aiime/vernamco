@@ -16,9 +16,17 @@ public:
     ~MainWindow();
     Ui::MainWindow *ui;
 
+private:
+    QString openedFile;
+
 private slots:
     void on_MaskEncryption_triggered();
     void on_MaskDecryption_triggered();
+    void on_Open_triggered();
+    void on_Save_triggered();
+    void on_SaveAs_triggered();
+    void on_Close_triggered();
+    void on_Exit_triggered();
 };
 
 #endif
