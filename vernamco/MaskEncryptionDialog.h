@@ -24,9 +24,13 @@ private slots:
 
     void on_MaskFromIniPushButton_clicked();
 
+    void on_MaskFromFilePushButton_clicked();
+
 private:
     MainWindow *mainWindow;
     QVector<int> strVectorToIntVector(QVector<QString> strVector);
+    QByteArray fileAsByteArray;
+    bool fileAsMask;
 };
 
 #endif

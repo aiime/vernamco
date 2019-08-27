@@ -21,7 +21,12 @@ QString MaskDecryption::decryptText(QString text, QString alphabet, QVector<int>
         int   currentShift  = mask[j];
 
         int currentSymbolPosition = alphabet.indexOf(currentSymbol);
-        QChar newSymbol = alphabet[(currentSymbolPosition + alphabet.length() - currentShift) % alphabet.length()];
+        int newSymbolPosition = (currentSymbolPosition - currentShift) % alphabet.length();
+        if (newSymbolPosition < 0)
+        {
+            newSymbolPosition = alphabet.length() + newSymbolPosition;
+        }
+        QChar newSymbol = alphabet[newSymbolPosition];
 
         decryptedText.push_back(newSymbol);
 
