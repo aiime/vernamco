@@ -9,6 +9,7 @@
 
 #include "ui_MaskDecryptionDialog.h"
 #include "ui_MainWindow.h"
+#include <AlphabetExtractor.h>
 
 MaskDecryptionDialog::MaskDecryptionDialog(QWidget *parent) :
     QDialog(parent),
@@ -30,7 +31,7 @@ void MaskDecryptionDialog::on_DecryptionPushButton_clicked()
     QString text = mainWindow->ui->TextEdit->toPlainText();
 
     // Get alphabet.
-    QString alphabet = ui->AlphabetLineEdit->text();
+    QString alphabet = AlphabetExtractor::extractAlphabet(ui->AlphabetLineEdit->text());
 
     // Get mask.
     QVector<int> mask;

@@ -87,6 +87,7 @@
      <string>Encryption</string>
     </property>
     <addaction name="MaskEncryption"/>
+    <addaction name="SymbolReplacement"/>
    </widget>
    <widget class="QMenu" name="DecryptionMenu">
     <property name="title">
@@ -137,6 +138,11 @@
   <action name="Close">
    <property name="text">
     <string>Close</string>
+   </property>
+  </action>
+  <action name="SymbolReplacement">
+   <property name="text">
+    <string>Symbol Replacement</string>
    </property>
   </action>
  </widget>

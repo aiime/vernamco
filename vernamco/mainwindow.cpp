@@ -2,6 +2,8 @@
 #include "ui_MainWindow.h"
 #include "MaskEncryptionDialog.h"
 #include "MaskDecryptionDialog.h"
+#include "SymbolReplacementDialog.h"
+
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
@@ -23,6 +25,13 @@ void MainWindow::on_MaskEncryption_triggered()
     MaskEncryptionDialog maskEncryptionDialog(this);
     maskEncryptionDialog.setModal(true);
     maskEncryptionDialog.exec();
+}
+
+void MainWindow::on_SymbolReplacement_triggered()
+{
+    SymbolReplacementDialog symbolReplacementDialog(this);
+    symbolReplacementDialog.setModal(true);
+    symbolReplacementDialog.exec();
 }
 
 void MainWindow::on_MaskDecryption_triggered()

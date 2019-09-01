@@ -27,6 +27,7 @@ private slots:
     void on_SaveAs_triggered();
     void on_Close_triggered();
     void on_Exit_triggered();
+    void on_SymbolReplacement_triggered();
 };
 
 #endif

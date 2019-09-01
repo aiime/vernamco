@@ -25,24 +25,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        AlphabetExtractor.cpp \
         MainWindow.cpp \
         MaskDecryption.cpp \
         MaskDecryptionDialog.cpp \
         MaskEncryption.cpp \
         MaskEncryptionDialog.cpp \
+        SymbolReplacement.cpp \
+        SymbolReplacementDialog.cpp \
+        TextInSymbolsWindow.cpp \
         main.cpp
 
 HEADERS += \
+    AlphabetExtractor.h \
         MainWindow.h \
         MaskDecryption.h \
         MaskDecryptionDialog.h \
         MaskEncryption.h \
-        MaskEncryptionDialog.h \
+        MaskEncryptionDialog.h \ \
+    SymbolReplacement.h \
+    SymbolReplacementDialog.h \
+    TextInSymbolsWindow.h
 
 FORMS += \
         MainWindow.ui \
         MaskDecryptionDialog.ui \
-        MaskEncryptionDialog.ui
+        MaskEncryptionDialog.ui \
+        SymbolReplacementDialog.ui \
+        TextInSymbolsWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

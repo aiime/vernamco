@@ -7,6 +7,7 @@
 
 #include "ui_MaskEncryptionDialog.h"
 #include "ui_MainWindow.h"
+#include <AlphabetExtractor.h>
 
 MaskEncryptionDialog::MaskEncryptionDialog(QWidget *parent) :
     QDialog(parent),
@@ -21,18 +22,18 @@ MaskEncryptionDialog::~MaskEncryptionDialog()
 {
     delete ui;
 }
-#include <QDebug>
+
 void MaskEncryptionDialog::on_EncryptionPushButton_clicked()
 {
     // Get text.
     QString text = mainWindow->ui->TextEdit->toPlainText();
 
     // Get alphabet.
-    QString alphabet = ui->AlphabetLineEdit->text();
+    QString alphabet = AlphabetExtractor::extractAlphabet(ui->AlphabetLineEdit->text());
 
     // Get mask.
     QVector<int> mask;
-    qDebug() << fileAsMask;
+
     if (fileAsMask)
     {
         for (QByteArray::iterator it = fileAsByteArray.begin(); it != fileAsByteArray.end(); it++)
